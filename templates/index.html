@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <title>Upside Down Detector</title>
@@ -18,8 +19,8 @@
     }
 </style>
 
-<body>
-    <div class="container max-w-lg m-auto">
+<body class="flex flex-col h-screen">
+    <div class="container max-w-lg m-auto grow">
         <h1 class="jumbotron my-8  font text-3xl font-extrabold">Upside Down Classifier</h1>
         <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
             <div class="form-group">
@@ -33,14 +34,11 @@
                 <button type="submit" class="btn btn-success font-semibold">Submit</button>
             </div>
         </form>
-
         {% if prediction %}
-        <img src="{{img_path}}" height="400px" width="400px">
+        <img src="{{img_path}}" height="200px" width="200px" class="inline-block m-auto">
         <h2> The Uploaded Image is : <i> {{prediction}} </i></h2>
-
         {% endif %}
-
     </div>
+    <footer class="text-center">&copy; Ashish Papanai 2022</footer>
 </body>
-
 </html>
